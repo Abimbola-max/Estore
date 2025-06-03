@@ -33,7 +33,7 @@ public class WalrusCloudService implements CloudService{
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<?> requestEntity =
                 new HttpEntity<>(resource, headers);
-        ResponseEntity<WalrusUploadResponse> response = restTemplate.exchange(URI.create(walrusUrl), PUT, requestEntity, WalrusUploadResponse.class);
+        ResponseEntity<WalrusUploadResponse> response = restTemplate.exchange(walrusUrl, PUT, requestEntity, WalrusUploadResponse.class, params);
         WalrusUploadResponse walrusUploadResponse = response.getBody();
         boolean isFileAlreadyExists = walrusUploadResponse != null && walrusUploadResponse.getNewlyCreated() == null;
         if (isFileAlreadyExists) return walrusUploadResponse.getAlreadyCertified().getBlobId();
