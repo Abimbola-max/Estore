@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BlobObject {
+public class AlreadyCertified {
 
     private String blobId;
 }

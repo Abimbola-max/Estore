@@ -1,8 +1,13 @@
 package org.estore.estore.dto.response.walrus;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class NewlyCreated {
 
-    public BlobObject blobObject;
-    public int cost;
+    private BlobObject blobObject;
+    private int cost;
 
 }
